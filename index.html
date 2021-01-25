@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -28,8 +28,16 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
+    <div class="container time-block">
+      <div class="input-group">
+        <div class="row input-group-prepend">
+          <span class="hour input-group-text">08:00</span>
+        </div>
+        <textarea class="textarea form-control" type="text" cols="50" rows="2"></textarea>
+        <div class="input-group-append">
+          <button class="saveBtn" type="button">SAVE</button>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
