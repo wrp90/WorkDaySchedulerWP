@@ -1,28 +1,25 @@
 // Work Day Scheduler
 
 // Global Variables
-var textArea = $("textarea").val();
+var textArea9am = $("textarea9am").val();
 var hour = $(".hour").text();
-
 
 // Date
 var date = moment().format('dddd, MMMM Do YYYY');
 $("#currentDay").text(date);
 
 
-$(document).ready(function() {
-    $(".saveBtn").on("click", function () {
-        var textArea = 	$("textarea").val();
-        var hour = $(".hour").text();
-        localStorage.setItem(textArea, hour);
-    })
-    
-    $("#textarea9am").val(localStorage.getItem($("textarea").val(), hour));
-})
+$(document).ready(function () {
+    $("#saveBtn9am").on("click", function () {
+        var textArea9am = $("#textarea9am").val();
+        var hour9 = $("#hour9").text();
+        localStorage.setItem(hour9, textArea9am);
+    });
+    $("#textarea9am").val(localStorage.getItem("09:00 AM"));
+
+});
 
 
 
 
-// function showStorage() {
-//     $("textarea").append(localStorage.getItem(textArea, hour))
-// }
+
