@@ -3,8 +3,17 @@
 // Global Variables
 
 
+// Date
+var date = moment().format('dddd, MMMM Do YYYY');
+$("#currentDay").text(date);
+
+
 $(document).ready(function() {
-    var date = moment().format('dddd, MMMM Do YYYY');
-    $("#currentDay").text(date);
-    console.log(date)
+    $(".saveBtn").on("click", function () {
+        var textArea = 	$("textarea").val();
+        var hour = $(".hour").text();
+        console.log(hour)
+
+        localStorage.setItem(textArea, hour);
+    })
 })
