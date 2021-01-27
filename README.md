@@ -4,7 +4,7 @@
 
 # How to use
 * The app is very easy to use.  Just click on a text area and type what you want.
-* After the save button is pressed, whatever is in the text area will stay even after page is refreshed.
+* After the save button is pressed, the text will be saved to local storage and will stay even after page is refreshed.
 * The text slots are all color coded to show past, present and future times using Moment.js library.
 
 # Screen Shot + Link
