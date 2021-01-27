@@ -2,6 +2,7 @@
 
 // Global Variables
 var textArea9am = $("textarea9am").val();
+var hourNow = moment().hour('H');
 var hour = $(".hour").text();
 
 // Date
@@ -73,7 +74,47 @@ $(document).ready(function () {
     });
     $("#textarea5pm").val(localStorage.getItem("05:00 PM"));
 
+    function colorCode() {
+        // console.log('go')
+        debugger;
+        // get current hour of day
+        var currentHour = moment().hour();
+        var amOrPm;
+        // for each of the slots
+        for (var slotHour = 9; slotHour < 18; slotHour++ ) {
+            // convert 24hr time to 12hr time
+            var standardHour;
+            if (slotHour === 12) {
+                standardHour = slotHour;
+                amOrPm = 'pm'
+            } else if (slotHour > 12)  {
+                standardHour = slotHour - 12;
+                amOrPm = 'pm'
+            } else if (slotHour < 12)  {
+                standardHour = slotHour;
+                amOrPm = 'am'
+            }
+            // create a selector to use that matches the html id
+            var htmlElementId = '#textarea' +  standardHour + amOrPm; 
 
+            // change color
+            if (slotHour < currentHour) {
+                // reach into the html and grab the slot that matches slot hour
+                // give it a class of gray
+                $(htmlElementId).addClass('past')
+            } else if (slotHour > currentHour) {
+                // reach into the html and grab the slot that matches slot hour
+                // give it a class of green
+                $(htmlElementId).addClass('future')
+            } else if (slotHour === currentHour) {
+                // reach into the html and grab the slot that matches slot hour
+                // give it a class of red
+                $(htmlElementId).addClass('present')
+            }
+        }
+    }
+
+    colorCode();
 });
 
 
