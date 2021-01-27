@@ -1,6 +1,6 @@
 # WorkDaySchedulerWP
 
-# The goal if this project was to create a work day schedule that saves events and is color coded. 
+# The goal if this project was to create a work day schedule that saves events and is color coded to match past, present and future events. 
 
 # How to use
 * The app is very easy to use.  Just click on a text area and type what you want.
