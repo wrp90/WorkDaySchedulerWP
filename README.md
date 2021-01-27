@@ -7,7 +7,7 @@
 * After the save button is pressed, the text will be saved to local storage and will stay even after page is refreshed.
 * The text slots are all color coded to show past, present and future times using Moment.js library.
 
-# Screen Shot + Link
+# Link + Screen Shot
 
 * https://wrp90.github.io/WorkDaySchedulerWP/
 

@@ -1,9 +1,5 @@
 // Work Day Scheduler
 
-// Global Variables
-var textArea9am = $("textarea9am").val();
-var hourNow = moment().hour('H');
-var hour = $(".hour").text();
 
 // Date
 var date = moment().format('dddd, MMMM Do YYYY');
@@ -75,23 +71,22 @@ $(document).ready(function () {
     });
     $("#textarea5pm").val(localStorage.getItem("05:00 PM"));
 
+    // Function to color code each time slot
     function colorCode() {
-        // console.log('go')
-        debugger;
         // get current hour of day
         var currentHour = moment().hour();
         var amOrpm;
-        // for each of the slots
+        // convert 24hr time to 12hr time since ID is in 
+        // 12 hr format
         for (var slotHour = 9; slotHour < 18; slotHour++ ) {
-            // convert 24hr time to 12hr time
             var standardHour;
             if (slotHour === 12) {
                 standardHour = slotHour;
                 amOrpm = 'pm'
-            } else if (slotHour > 12)  {
+            } else if (slotHour > 12) {
                 standardHour = slotHour - 12;
                 amOrpm = 'pm'
-            } else if (slotHour < 12)  {
+            } else if (slotHour < 12) {
                 standardHour = slotHour;
                 amOrpm = 'am'
             }
@@ -101,20 +96,20 @@ $(document).ready(function () {
             // change color
             if (slotHour < currentHour) {
                 // reach into the html and grab the slot that matches slot hour
-                // give it a class of gray
+                // give it past class
                 $(htmlElementId).addClass('past')
             } else if (slotHour > currentHour) {
                 // reach into the html and grab the slot that matches slot hour
-                // give it a class of green
+                // give it future class
                 $(htmlElementId).addClass('future')
             } else if (slotHour === currentHour) {
                 // reach into the html and grab the slot that matches slot hour
-                // give it a class of red
+                // give it present class
                 $(htmlElementId).addClass('present')
             }
         }
     }
-
+    // Call the function
     colorCode();
 });
 
