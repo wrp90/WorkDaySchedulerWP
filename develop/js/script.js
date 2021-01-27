@@ -9,7 +9,8 @@ var hour = $(".hour").text();
 var date = moment().format('dddd, MMMM Do YYYY');
 $("#currentDay").text(date);
 
-
+// function on page load that saves each slot's text to local storage,
+// then is displayed by the line after
 $(document).ready(function () {
     $("#saveBtn9am").on("click", function () {
         var textArea9am = $("#textarea9am").val();
@@ -79,23 +80,23 @@ $(document).ready(function () {
         debugger;
         // get current hour of day
         var currentHour = moment().hour();
-        var amOrPm;
+        var amOrpm;
         // for each of the slots
         for (var slotHour = 9; slotHour < 18; slotHour++ ) {
             // convert 24hr time to 12hr time
             var standardHour;
             if (slotHour === 12) {
                 standardHour = slotHour;
-                amOrPm = 'pm'
+                amOrpm = 'pm'
             } else if (slotHour > 12)  {
                 standardHour = slotHour - 12;
-                amOrPm = 'pm'
+                amOrpm = 'pm'
             } else if (slotHour < 12)  {
                 standardHour = slotHour;
-                amOrPm = 'am'
+                amOrpm = 'am'
             }
             // create a selector to use that matches the html id
-            var htmlElementId = '#textarea' +  standardHour + amOrPm; 
+            var htmlElementId = '#textarea' +  standardHour + amOrpm; 
 
             // change color
             if (slotHour < currentHour) {
