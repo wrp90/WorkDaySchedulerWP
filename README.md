@@ -12,3 +12,5 @@
 * https://wrp90.github.io/WorkDaySchedulerWP/
 
 ![Getting Started](./assets/imgs/appSS.png)
+
+* For more info please contact wpapp90@gmail.com
